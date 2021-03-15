@@ -1,9 +1,11 @@
 % plot function
-f = @(x) (2*x^2 + 3*x) / (x^2 + 4*x + 5);
+%f = @(x) (2*x^2 + 3*x) / (x^2 + 4*x + 5); non vectorized
+f = @(x) (2*(x.^2) + 3*x) ./ (x.^2 + 4*x + 5);
 hold on
 fplot(f)
 plot(-2, f(-2), 'r*') % origin
 hold off
+
 
 % style plot
 grid on
